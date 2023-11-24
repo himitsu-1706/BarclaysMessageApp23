@@ -42,7 +42,6 @@ pipeline {
                                   dependencyCheck additionalArguments: '''
                                       --out "./"
                                       --scan "./"
-                                      --noupdate
                                       --format "ALL"
                                       --prettyPrint''', odcInstallation: 'dependency-check'
                                   dependencyCheckPublisher pattern: 'dependency-check-report.xml'
