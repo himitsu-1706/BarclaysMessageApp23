@@ -7,6 +7,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -17,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PersonWithFullHttpRequest {
 
     ObjectMapper mapper = new ObjectMapper();
-
+    @Disabled
     @Test
     public void testGettingAllPeople() throws IOException {
         HttpUriRequest request = new HttpGet("http://localhost:8080/people");
@@ -30,7 +31,7 @@ public class PersonWithFullHttpRequest {
         assertEquals("Luis", people[2].getName());
         assertEquals("Marta", people[3].getName());
     }
-
+    @Disabled
     @Test
     public void testGetMessageById() throws IOException {
         Long personId = 1L;

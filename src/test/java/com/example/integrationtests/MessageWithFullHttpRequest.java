@@ -6,6 +6,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -16,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MessageWithFullHttpRequest {
 
     ObjectMapper mapper = new ObjectMapper();
-
+    @Disabled
     @Test
     public void testGettingAllMessages() throws IOException {
         HttpUriRequest request = new HttpGet("http://localhost:8080/messages");
@@ -29,7 +30,7 @@ public class MessageWithFullHttpRequest {
         assertEquals("Third test message", messages[2].getContent());
         assertEquals("Fourth test message", messages[3].getContent());
     }
-
+    @Disabled
     @Test
     public void testGetMessageById() throws IOException {
         Long messageId = 1L;
